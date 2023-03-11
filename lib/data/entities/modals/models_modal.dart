@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class ModelsModal {
   final String id;
   final int created;
