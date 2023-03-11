@@ -1,4 +1,4 @@
-import 'package:chat_gpt_app/ui/view/widgets/text_widget.dart';
+import 'package:chat_gpt_app/data/entities/services.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -26,17 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           IconButton(
             onPressed: () async {
-              await showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return Row(
-                      children: [
-                        TextWidget(
-                          label: "Chosen Model",
-                        )
-                      ],
-                    );
-                  });
+              await Services.showModalSheet(context: context);
             },
             icon: const Icon(Icons.more_vert),
             splashColor: Colors.transparent,
