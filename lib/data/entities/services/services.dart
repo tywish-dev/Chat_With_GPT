@@ -1,8 +1,8 @@
-import 'package:chat_gpt_app/ui/view/widgets/drop_down.dart';
+import '/ui/view/widgets/drop_down.dart';
 import 'package:flutter/material.dart';
 
-import '../../ui/view/widgets/text_widget.dart';
-import '../constants/constants.dart';
+import '../../../ui/view/widgets/text_widget.dart';
+import '../../constants/constants.dart';
 
 class Services {
   static Future<void> showModalSheet({required BuildContext context}) async {

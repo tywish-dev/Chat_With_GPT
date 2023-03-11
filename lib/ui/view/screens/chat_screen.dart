@@ -1,3 +1,5 @@
+import 'package:chat_gpt_app/data/entities/services/api_service.dart';
+
 import '/data/constants/constants.dart';
 import '/ui/view/widgets/chat_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -75,7 +77,13 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          try {
+                            await ApiService.getModels();
+                          } catch (e) {
+                            print(e);
+                          }
+                        },
                         icon: const Icon(Icons.send),
                         color: Colors.white,
                       )
