@@ -1,4 +1,5 @@
-import 'ui/view/screens/chat_page.dart';
+import 'data/constants/constants.dart';
+import 'ui/view/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Chat With GPT-3',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        scaffoldBackgroundColor: scaffoldBgColor,
+        appBarTheme: AppBarTheme(color: cardColor),
       ),
-      home: const ChatPage(),
+      home: const ChatScreen(),
     );
   }
 }

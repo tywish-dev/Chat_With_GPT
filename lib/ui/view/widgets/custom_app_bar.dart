@@ -1,3 +1,4 @@
+import 'package:chat_gpt_app/ui/view/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -24,7 +25,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             textAlign: TextAlign.center,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Row(
+                      children: [
+                        TextWidget(
+                          label: "Chosen Model",
+                        )
+                      ],
+                    );
+                  });
+            },
             icon: const Icon(Icons.more_vert),
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
