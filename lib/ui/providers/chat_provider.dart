@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ChatProvider with ChangeNotifier {
   List<ChatModal> _chatList = [];
-
+  bool isUser = false;
   List<ChatModal> get getChatList => _chatList;
 
   void addUserMessage({required String msg}) {
@@ -14,8 +14,8 @@ class ChatProvider with ChangeNotifier {
 
   Future<void> sendMessageAndGetAnswers(
       {required String msg, required String modelId}) async {
-    _chatList
-        .addAll(await ApiService.sendMessage(message: msg, modelId: modelId));
+    _chatList.addAll(await ApiService.sendMessage(
+        message: msg, modelId: modelId, id: "user"));
     notifyListeners();
   }
 }
