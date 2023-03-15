@@ -70,38 +70,37 @@ class _ChatScreenState extends State<ChatScreen> {
             const SizedBox(
               height: 15,
             ),
-            Material(
-              color: cardColor,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        focusNode: focusNode,
-                        style: const TextStyle(color: Colors.white),
-                        controller: textEditingController,
-                        onSubmitted: (value) async {
-                          await sendMessageFCT(
-                              modelsProvider: modelsProvider,
-                              chatProvider: chatProvider);
-                        },
-                        decoration: const InputDecoration.collapsed(
-                            hintText: 'How can I help you?',
-                            hintStyle: TextStyle(color: Colors.grey)),
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () async {
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      focusNode: focusNode,
+                      style: const TextStyle(color: Colors.white),
+                      controller: textEditingController,
+                      onSubmitted: (value) async {
                         await sendMessageFCT(
                             modelsProvider: modelsProvider,
                             chatProvider: chatProvider);
                       },
-                      icon: const Icon(Icons.send),
-                      color: Colors.white,
-                    )
-                  ],
-                ),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30)),
+                          hintText: 'How can I help you?',
+                          hintStyle: const TextStyle(color: Colors.grey)),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      await sendMessageFCT(
+                          modelsProvider: modelsProvider,
+                          chatProvider: chatProvider);
+                    },
+                    icon: const Icon(Icons.send),
+                    color: Colors.white,
+                  )
+                ],
               ),
             )
           ],
