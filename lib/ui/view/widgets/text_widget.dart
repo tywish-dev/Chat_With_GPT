@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:convert' show utf8;
 
 class TextWidget extends StatelessWidget {
   const TextWidget(
@@ -11,10 +12,13 @@ class TextWidget extends StatelessWidget {
   final double fontSize;
   final Color? color;
   final FontWeight? fontWeight;
+
   @override
   Widget build(BuildContext context) {
+    var encoded = utf8.encode(label);
+    var decoded = utf8.decode(encoded);
     return Text(
-      label,
+      decoded,
       textAlign: TextAlign.left,
       style: TextStyle(
           color: color ?? Colors.white,

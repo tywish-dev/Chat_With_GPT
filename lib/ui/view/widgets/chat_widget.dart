@@ -20,7 +20,7 @@ class ChatWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.network(
-                  chatIndex == 0
+                  chatIndex != 0
                       ? "https://static.vecteezy.com/system/resources/previews/005/005/788/original/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg"
                       : "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png",
                   width: 30,
@@ -30,7 +30,7 @@ class ChatWidget extends StatelessWidget {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8, top: 4),
-                    child: chatIndex == 0
+                    child: chatIndex != 0
                         ? TextWidget(label: msg)
                         : DefaultTextStyle(
                             style: const TextStyle(

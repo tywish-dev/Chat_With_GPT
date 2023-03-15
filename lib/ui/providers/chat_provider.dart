@@ -8,7 +8,7 @@ class ChatProvider with ChangeNotifier {
   List<ChatModal> get getChatList => _chatList;
 
   void addUserMessage({required String msg}) {
-    _chatList.add(ChatModal(msg: msg, chatIndex: 0));
+    _chatList.add(ChatModal(msg: msg, chatIndex: 1));
     notifyListeners();
   }
 

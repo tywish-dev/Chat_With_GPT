@@ -51,7 +51,7 @@ class ApiService {
             "model": modelId,
             "messages": [
               {"role": id, "content": message}
-            ]
+            ],
           },
         ),
       );
@@ -67,8 +67,8 @@ class ApiService {
         chatList = List.generate(
           jsonResponse["choices"].length,
           (index) => ChatModal(
-              msg: jsonResponse["choices"][0]["message"]["content"],
-              chatIndex: jsonResponse["choices"][0]["index"]),
+              msg: jsonResponse["choices"][index]["message"]["content"],
+              chatIndex: jsonResponse["choices"][index]["index"]),
         );
       }
       return chatList;
